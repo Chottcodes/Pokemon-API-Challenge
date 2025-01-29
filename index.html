@@ -11,16 +11,14 @@
     <title>Document</title>
   </head>
   <body
-    class="h-screen fadeIn bg-cover bg-center bg-no-repeat bg-fixed bg-[url('../Assests/pokemontheme.png')]"
+    class="h-screen fadeIn bg-cover bg-center bg-no-repeat bg-fixed bg-[url('../Assests/pokemontheme.png')] font-sans"
   >
     <div
       class="w-[90%] h-[10%] bg-black/75 m-auto mt-5 rounded-2xl flex items-center"
     >
       <form class="w-[100%] h-[100%]">
         <div class="relative h-full flex items-center">
-          <div
-            class="absolute inset-y-0 start-0 flex items-center ps-3 "
-          >
+          <div class="absolute inset-y-0 start-0 flex items-center ps-3">
             <svg
               class="w-4 h-4 text-gray-500 dark:text-gray-400"
               aria-hidden="true"
@@ -38,11 +36,9 @@
             </svg>
           </div>
           <input
-            
             id="default-search"
             class="block w-full h-full p-4 ps-10 text-lg border border-gray-300 rounded-lg bg-gray-800/70 placeholder-white text-white"
             placeholder="Pokemon or Pokedex #"
-          
           />
           <button
             type="submit"
@@ -57,32 +53,32 @@
     <div
       class="w-[90%] h-[40%] bg-black/70 m-auto mt-[5%] border-4 rounded-2xl overflow-hidden border-amber-400"
     >
-      <div class="w-[100%] h-[60%]  flex justify-center items-center">
-        <img
-          class="w-56 h-56 object-cover"
-          id="pokimonIMG"
-          src=""
-        
-        />
+      <div class="w-[100%] h-[60%] flex justify-center items-center">
+        <img class="w-56 h-56 object-cover" id="pokimonIMG" src="" />
       </div>
       <div
-        class="w-[100%] h-[20%] flex  items-center justify-evenly text-yellow-400 text-3xl"
+        class="w-[100%] h-[20%] flex items-center justify-evenly text-yellow-400 text-3xl"
       >
         <h1 class="ml-[20%] font-bold" id="pokemonName"></h1>
         <h1 class="text-lg font-bold" id="pokemonID"></h1>
       </div>
       <div class="w-[100%] h-[20%] flex items-center justify-evenly">
-        <button class="w-[10%] flex justify-center items-center invert">
-          <img class="w-[100%]" src="./Assests/right (1).png" alt="" />
-        </button>
         <button class="w-[10%] flex justify-center items-center">
           <img class="w-[100%]" src="./Assests/heart.png" alt="" />
         </button>
-        <button class="w-[10%] flex justify-center items-center invert" id="randomBTN">
+        <button
+          class="w-[10%] flex justify-center items-center invert"
+          id="randomBTN"
+        >
           <img class="w-[100%]" src="./Assests/dice-cube.png" alt="" />
         </button>
         <button class="w-[10%] flex justify-center items-center invert">
-          <img class="w-[100%]" src="./Assests/right.png" alt="" />
+          <img
+            class="w-[100%] invert-0"
+            id="defaultBTN"
+            src="./Assests/Default.png"
+            alt=""
+          />
         </button>
       </div>
     </div>
@@ -96,27 +92,67 @@
         <hr class="bg-amber-400 w-[80%]" />
         <h1 class="text-2xl" id="typeTXT"></h1>
       </div>
-      <div class="text-amber-400 flex flex-col items-center w-[100%] h-[100%] gap-4 ">
+      <div
+        class="text-amber-400 flex flex-col items-center w-[100%] h-[100%] gap-4"
+      >
         <h1 class="text-3xl font-bold">Abilities</h1>
         <hr class="bg-amber-400 w-[80%]" />
-        <div class="w-[90%] h-[100%] flex justify-center overflow-x-auto overflow-y-hidden whitespace-nowrap "><h1 id="pokemonAblitities" class="text-2xl"></h1></div>
-        
+        <div
+          class="w-[90%] h-[100%] flex justify-center overflow-x-auto overflow-y-hidden whitespace-nowrap"
+        >
+          <h1 id="pokemonAblitities" class="text-2xl"></h1>
+        </div>
       </div>
-      <div class="text-amber-400 flex flex-col items-center w-[100%] h-[100%] gap-4">
+      <div
+        class="text-amber-400 flex flex-col items-center w-[100%] h-[100%] gap-4"
+      >
         <h1 class="text-3xl font-bold">Moves</h1>
         <hr class="bg-amber-400 w-[80%]" />
-        <div class="w-[90%] h-[100%] overflow-x-auto overflow-y-hidden whitespace-nowrap "><h1 id="movesTXT" class="text-2xl"></h1></div>
+        <div
+          class="w-[90%] h-[100%] overflow-x-auto overflow-y-hidden whitespace-nowrap"
+        >
+          <h1 id="movesTXT" class="text-2xl"></h1>
+        </div>
       </div>
-      <div class="text-amber-400 flex flex-col items-center w-[100%] h-[100%] gap-4">
+      <div
+        class="text-amber-400 flex flex-col items-center w-[100%] h-[100%] gap-4"
+      >
         <h1 class="text-3xl font-bold">Location</h1>
         <hr class="bg-amber-400 w-[80%]" />
-        <div class="w-[90%] h-[100%] overflow-x-auto overflow-y-hidden whitespace-nowrap flex justify-center"><h1 id="locationTXT" class="text-2xl"></h1></div>
+        <div
+          class="w-[90%] h-[100%] overflow-x-auto overflow-y-hidden whitespace-nowrap flex justify-center"
+        >
+          <h1 id="locationTXT" class="text-2xl"></h1>
+        </div>
       </div>
-      <div class="text-amber-400 flex flex-col items-center w-[100%] h-[100%]">
+      <div
+        class="text-amber-400 flex flex-col items-center w-[100%] h-[100%] gap-4"
+      >
         <h1 class="text-3xl font-bold">Evolution</h1>
         <hr class="bg-amber-400 w-[80%]" />
+        <div
+          class="w-[90%] h-[100%] overflow-x-auto overflow-y-hidden whitespace-nowrap flex justify-center"
+        >
+          <h1 id="evoTXT" class="text-2xl"></h1>
+        </div>
       </div>
     </div>
+    
+    <div class="bg-amber-600 fixed bottom flex justify-end w-[100%]">
+<button data-popover-target="popover-offset" data-popover-offset="30" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Offset popover</button>
+<div data-popover id="popover-offset" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-xs opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+        <h3 class="font-semibold text-gray-900 dark:text-white">Popover offset</h3>
+    </div>
+    <div class="px-3 py-2">
+        <p>And here's some amazing content. It's very engaging. Right?</p>
+    </div>
+    <div data-popper-arrow></div>
+</div>
+</div>
+
+
+
     <script type="module" src="./scripts/searchBar.js"></script>
     <script type="module" src="./scripts/randomButton.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.0.0/dist/flowbite.min.js"></script>

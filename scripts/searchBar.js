@@ -7,6 +7,9 @@ const movesTXT = document.getElementById("movesTXT");
 const pokemonID = document.getElementById("pokemonID");
 const pokemonAblitities = document.getElementById("pokemonAblitities");
 const locationTXT = document.getElementById("locationTXT");
+const evoTXT = document.getElementById('evoTXT');
+const shineBTN =document.getElementById('shineBTN');
+const defaultBTN = document.getElementById('defaultBTN');
 
 const GetAPI = async (userinput) => {
   try {
@@ -34,7 +37,19 @@ const GetAPI = async (userinput) => {
     pokemonIMG.src = defaultsprite;
     pokemonName.innerText = name;
     pokemonID.innerText = `#${id}`;
-    //   type
+    let isShinny = false;
+
+    defaultBTN.addEventListener('click',()=>{
+        if(isShinny){
+            pokemonIMG.src=defaultsprite;
+            defaultBTN.src="./Assests/Default.png";
+        }else{
+            pokemonIMG.src=shinysprite;
+            defaultBTN.src='./Assests/shines.png';
+           
+        }
+        isShinny = !isShinny;
+    })
     let pokeTypes = [];
     for (let i = 0; i < types.length; i++) {
       pokeTypes.push(types[i].type.name);
@@ -102,8 +117,8 @@ const GetAPI = async (userinput) => {
         }
       }
     }
-   
-    console.log(evoChainResult);
+    evoTXT.innerText = evoChainResult.join(", ");
+    console.log(chainData);
   } catch (error) {
     console.log(error);
   }
