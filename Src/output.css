@@ -779,6 +779,9 @@
   .mt-3 {
     margin-top: calc(var(--spacing) * 3);
   }
+  .mt-4 {
+    margin-top: calc(var(--spacing) * 4);
+  }
   .mt-5 {
     margin-top: calc(var(--spacing) * 5);
   }
@@ -787,6 +790,9 @@
   }
   .mt-\[5\%\] {
     margin-top: 5%;
+  }
+  .mr-4 {
+    margin-right: calc(var(--spacing) * 4);
   }
   .mr-\[5\%\] {
     margin-right: 5%;
@@ -935,6 +941,9 @@
   .h-\[10\%\] {
     height: 10%;
   }
+  .h-\[15\%\] {
+    height: 15%;
+  }
   .h-\[20\%\] {
     height: 20%;
   }
@@ -1031,8 +1040,14 @@
   .w-72 {
     width: calc(var(--spacing) * 72);
   }
+  .w-\[5\%\] {
+    width: 5%;
+  }
   .w-\[10\%\] {
     width: 10%;
+  }
+  .w-\[10\] {
+    width: 10;
   }
   .w-\[15\%\] {
     width: 15%;
@@ -1057,6 +1072,9 @@
   }
   .w-\[80\%\] {
     width: 80%;
+  }
+  .w-\[80\] {
+    width: 80;
   }
   .w-\[90\%\] {
     width: 90%;
@@ -1874,8 +1892,14 @@
   .bg-black\/80 {
     background-color: color-mix(in oklab, var(--color-black) 80%, transparent);
   }
+  .bg-blue-100 {
+    background-color: var(--color-blue-100);
+  }
   .bg-blue-400 {
     background-color: var(--color-blue-400);
+  }
+  .bg-blue-600 {
+    background-color: var(--color-blue-600);
   }
   .bg-blue-700 {
     background-color: var(--color-blue-700);
@@ -1898,6 +1922,12 @@
   .bg-gray-900\/50 {
     background-color: color-mix(in oklab, var(--color-gray-900) 50%, transparent);
   }
+  .bg-green-100 {
+    background-color: var(--color-green-100);
+  }
+  .bg-green-400 {
+    background-color: var(--color-green-400);
+  }
   .bg-red-500 {
     background-color: var(--color-red-500);
   }
@@ -1906,6 +1936,9 @@
   }
   .bg-red-500\/\[50\%\] {
     background-color: color-mix(in oklab, var(--color-red-500) 50%, transparent);
+  }
+  .bg-red-600 {
+    background-color: var(--color-red-600);
   }
   .bg-transparent {
     background-color: transparent;

@@ -10,6 +10,7 @@ const locationTXT = document.getElementById("locationTXT");
 const evoTXT = document.getElementById('evoTXT');
 const shineBTN =document.getElementById('shineBTN');
 const defaultBTN = document.getElementById('defaultBTN');
+const likeBTN = document.getElementById("likeBTN");
 
 const GetAPI = async (userinput) => {
   try {
@@ -128,6 +129,6 @@ const GetAPI = async (userinput) => {
 submitBTN.addEventListener("click", async () => {
   event.preventDefault();
   let userinput = inputfield.value;
-  GetAPI(userinput);
+  await GetAPI(userinput);
 });
 export { GetAPI };

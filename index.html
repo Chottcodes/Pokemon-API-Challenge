@@ -155,8 +155,11 @@
 <button class="" id="favoritesButton"><img src="./Assests/heart.png" alt="heart"></button>
 </div>
 <!-- favorites popout -->
-<div id="favoritePopOut" class="hidden bg-white/40 backdrop-blur-md h-[40%] w-full fixed bottom-0 flex flex-col items-center text-4xl text-amber-400 gap-3">
-  <h1 class="mt-2 font-bold">Favorite</h1>
+<div id="favoritePopOut" class="hidden bg-white/40 backdrop-blur-md h-[50%] w-full fixed bottom-0 flex flex-col items-center text-4xl text-amber-400 gap-3">
+  <div class="h-[15%] w-[100%] flex justify-end">
+    <button id="favoriteCloseButton" class=" w-[10%] mr-4 mt-4"><img class="w-[100%]" src="./Assests/close (1).png" alt="exit"></button>
+  </div>
+  <div class="text-center"><h1 class=" font-bold">Favorite</h1></div>
   <p class="text-lg text-black font-bold">Double click to remove</p>
   <hr class="bg-amber-500 w-[80%]">
   <ul class=" overflow-y-auto  flex flex-col  gap-4">
