@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./Src/output.css" />
+    <link rel="stylesheet" href="./Src/wickedcss.min (1).css">
     <link
       href="https://cdn.jsdelivr.net/npm/flowbite@3.0.0/dist/flowbite.min.css"
       rel="stylesheet"
@@ -11,7 +12,7 @@
     <title>Document</title>
   </head>
   <body
-    class="h-screen fadeIn bg-cover bg-center bg-no-repeat bg-fixed bg-[url('../Assests/pokemontheme.png')] font-sans"
+    class="h-screen relative fadeIn bg-cover bg-center bg-no-repeat bg-fixed bg-[url('../Assests/pokemontheme.png')] font-sans"
   >
     <div
       class="w-[90%] h-[10%] bg-black/75 m-auto mt-5 rounded-2xl flex items-center"
@@ -64,26 +65,26 @@
       </div>
       <div class="w-[100%] h-[20%] flex items-center justify-evenly">
         <button class="w-[10%] flex justify-center items-center">
-          <img class="w-[100%]" src="./Assests/heart.png" alt="" />
+          <img class="w-[100%] invert" id="likeBTN" src="./Assests/like.png" alt="heart" />
         </button>
         <button
           class="w-[10%] flex justify-center items-center invert"
           id="randomBTN"
         >
-          <img class="w-[100%]" src="./Assests/dice-cube.png" alt="" />
+          <img class="w-[100%]" src="./Assests/dice-cube.png" alt="Dice" />
         </button>
         <button class="w-[10%] flex justify-center items-center invert">
           <img
             class="w-[100%] invert-0"
             id="defaultBTN"
             src="./Assests/Default.png"
-            alt=""
+            alt="heart"
           />
         </button>
       </div>
     </div>
     <div
-      class="w-[90%] h-[100%] bg-black/70 m-auto mt-[5%] border-4 rounded-2xl overflow-hidden border-amber-400 flex flex-col justify-evenly"
+      class=" w-[90%] h-[100%] bg-black/70 m-auto mt-[5%] border-4 rounded-2xl overflow-hidden border-amber-400 flex flex-col justify-evenly"
     >
       <div
         class="text-amber-400 flex flex-col items-center w-[100%] h-[100%] mt-3 gap-4"
@@ -150,11 +151,25 @@
     <div data-popper-arrow></div>
 </div>
 </div>
+  <div class="  btn-container fixed bottom-0 right-0 flex justify-center items-center w-[15%] h-[10%] m-auto mr-[5%] mb-[5%] opacity-100 ">
+<button class="" id="favoritesButton"><img src="./Assests/heart.png" alt="heart"></button>
+</div>
+<!-- favorites popout -->
+<div id="favoritePopOut" class="hidden bg-white/40 backdrop-blur-md h-[40%] w-full fixed bottom-0 flex flex-col items-center text-4xl text-amber-400 gap-3">
+  <h1 class="mt-2 font-bold">Favorite</h1>
+  <p class="text-lg text-black font-bold">Double click to remove</p>
+  <hr class="bg-amber-500 w-[80%]">
+  <ul class=" overflow-y-auto  flex flex-col  gap-4">
+    <li class="bg-black/80 border">pikachu</li>
+    
+  </ul>
+</div>
 
 
 
     <script type="module" src="./scripts/searchBar.js"></script>
     <script type="module" src="./scripts/randomButton.js"></script>
+    <script src="./scripts/favoritesButton.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.0.0/dist/flowbite.min.js"></script>
   </body>
 </html>

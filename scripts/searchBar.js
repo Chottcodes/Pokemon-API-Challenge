@@ -106,6 +106,7 @@ const GetAPI = async (userinput) => {
     // evolves_to[0].species.name
     if (chain) {
       evoChainResult.push(chain.species.name);
+      
     }
     if (chain.evolves_to.length > 0) {
       for (let i = 0; i < chain.evolves_to.length; i++) {
