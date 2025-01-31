@@ -135,9 +135,16 @@ submitBTN.addEventListener("click", async (event) => {
   let userinput = inputfield.value;
   event.preventDefault();
   defaultBTN.src = "./Assests/Default.png";
+  searchLimit(userinput);
   await GetAPI(userinput);
 });
+const searchLimit = (input) => {
+  
+  if(input>="650"){
+    alert('you reached your limit');
+  }
 
+}
 const storetoLocalStorage = (userinput) => {
   if (!userinput) {
     return;

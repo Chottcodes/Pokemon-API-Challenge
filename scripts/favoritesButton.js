@@ -33,7 +33,7 @@ const Showlist = () => {
   favoritesListTxt.innerHTML = "";
   pokeNames.forEach((name) => {
     const listFavorites = document.createElement("li");
-    listFavorites.textContent = name;
+    listFavorites.textContent = name[0].toUpperCase() + name.slice(1);
     listFavorites.classList.add(
       "w-[100%]",
       "flex",
@@ -78,7 +78,7 @@ const AddtoLocalStorage = (userinput) => {
     return;
   }
   let inputArr = JSON.parse(localStorage.getItem("FavoritePokemon")) || [];
-  console.log(inputArr)
+  
   inputArr.push(userinput);
   let refinedArr = [];
   for (let i = 0; i < inputArr.length; i++) {
