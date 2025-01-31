@@ -1,4 +1,4 @@
-import { likeBTNCheck,AddtoLocalStorage } from "./favoritesButton.js";
+import { likeBTNCheck, AddtoLocalStorage } from "./favoritesButton.js";
 const inputfield = document.getElementById("default-search");
 const submitBTN = document.getElementById("submitBTN");
 const pokemonIMG = document.getElementById("pokimonIMG");
@@ -8,10 +8,13 @@ const movesTXT = document.getElementById("movesTXT");
 const pokemonID = document.getElementById("pokemonID");
 const pokemonAblitities = document.getElementById("pokemonAblitities");
 const locationTXT = document.getElementById("locationTXT");
-const evoTXT = document.getElementById('evoTXT');
-const shineBTN =document.getElementById('shineBTN');
-const defaultBTN = document.getElementById('defaultBTN');
+const evoTXT = document.getElementById("evoTXT");
+const shineBTN = document.getElementById("shineBTN");
+const defaultBTN = document.getElementById("defaultBTN");
 const likeBTN = document.getElementById("likeBTN");
+const favoritesBTN = document.getElementById("favoritesButton");
+
+let pokeName = '';
 
 const GetAPI = async (userinput) => {
   try {
@@ -39,30 +42,26 @@ const GetAPI = async (userinput) => {
     pokemonIMG.src = defaultsprite;
     pokemonName.innerText = name[0].toUpperCase() + name.slice(1);
     pokemonID.innerText = `#${id}`;
-    likeBTN.addEventListener('click',()=>{
-      AddtoLocalStorage(name);
-
-    })
+    pokeName = name;
+  
 
     let isShinny = false;
 
-    defaultBTN.addEventListener('click',()=>{
-        if(isShinny){
-            pokemonIMG.src=defaultsprite;
-            defaultBTN.src="./Assests/Default.png";
-        }else{
-            pokemonIMG.src=shinysprite;
-            defaultBTN.src='./Assests/shines.png';
-        }
-        isShinny = !isShinny;
-    })
+    defaultBTN.addEventListener("click", () => {
+      if (isShinny) {
+        pokemonIMG.src = defaultsprite;
+        defaultBTN.src = "./Assests/Default.png";
+      } else {
+        pokemonIMG.src = shinysprite;
+        defaultBTN.src = "./Assests/shines.png";
+      }
+      isShinny = !isShinny;
+    });
     let pokeTypes = [];
     for (let i = 0; i < types.length; i++) {
       pokeTypes.push(types[i].type.name);
     }
     pokemonTypeTXT.innerText = pokeTypes.join(", ");
-
-   
 
     //   abilities
     let pokeability = [];
@@ -114,7 +113,6 @@ const GetAPI = async (userinput) => {
     // evolves_to[0].species.name
     if (chain) {
       evoChainResult.push(chain.species.name);
-      
     }
     if (chain.evolves_to.length > 0) {
       for (let i = 0; i < chain.evolves_to.length; i++) {
@@ -136,16 +134,25 @@ const GetAPI = async (userinput) => {
 submitBTN.addEventListener("click", async (event) => {
   let userinput = inputfield.value;
   event.preventDefault();
-  defaultBTN.src="./Assests/Default.png";
+  defaultBTN.src = "./Assests/Default.png";
   await GetAPI(userinput);
 });
 
 const storetoLocalStorage = (userinput) => {
-  if(!userinput){
+  if (!userinput) {
     return;
-  } 
-  let inputArr = JSON.parse(localStorage.getItem('FavoritePokemon')) || [];
+  }
+  let inputArr = JSON.parse(localStorage.getItem("FavoritePokemon")) || [];
   inputArr.push(inputArr);
-  localStorage.setItem('FavoritePokemon',JSON.stringify(inputArr));
-}
-export { GetAPI,inputfield };
+  localStorage.setItem("FavoritePokemon", JSON.stringify(inputArr));
+};
+likeBTN.addEventListener("click", () => {
+  
+        AddtoLocalStorage(pokeName);
+        likeBTN.src = " Assests/heart.png";
+    favoritesBTN.classList.add("shake");
+    setTimeout(() => {
+      favoritesBTN.classList.remove("shake");
+    }, 1000);
+      });
+export { GetAPI, inputfield };

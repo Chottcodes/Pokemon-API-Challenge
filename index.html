@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./Src/output.css" />
-    <link rel="stylesheet" href="./Src/wickedcss.min (1).css">
+    <link rel="stylesheet" href="./Src/wickedcss.min (1).css" />
     <link
       href="https://cdn.jsdelivr.net/npm/flowbite@3.0.0/dist/flowbite.min.css"
       rel="stylesheet"
@@ -12,27 +12,49 @@
     <title>Document</title>
   </head>
   <body
-    class="h-screen relative fadeIn bg-cover bg-center bg-no-repeat bg-fixed bg-[url('../Assests/pokemontheme.png')] lg:grid lg:grid-cols-2 lg:grid-rows-[60px_auto_auto]  font-sans"
+    class="h-screen relative fadeIn bg-cover bg-center bg-no-repeat bg-fixed bg-[url('../Assests/pokemontheme.png')] lg:grid lg:grid-cols-2 lg:grid-rows-[60px_auto_auto] font-sans"
   >
-    <div class="w-[90%] h-[7%] lg:h-[90%] lg:w-[60%] m-auto mt-5 rounded-2xl flex items-center gap-2">
-      <input type="text" class="w-[90%] h-[100%] rounded-lg text-amber-600 bg-black/70 border placeholder-amber-500 border-amber-500" placeholder="Pokemon name or Pokedex #" id="default-search">
-      <button class=" h-[90%] w-[35%] lg:h[100%] rounded-lg bg-black/70 border border-amber-500 text-amber-600 text-lg sm:text-2xl md:text-4xl lg:text-2xl"  id="submitBTN"> search</button>
+    <div
+      class="w-[90%] h-[7%] lg:h-[90%] lg:w-[60%] m-auto mt-5 rounded-2xl flex items-center gap-2"
+    >
+      <input
+        type="text"
+        class="w-[90%] h-[100%] rounded-lg text-amber-600 bg-black/70 border placeholder-amber-500 border-amber-500"
+        placeholder="Pokemon name or Pokedex #"
+        id="default-search"
+      />
+      <button
+        class="h-[90%] w-[35%] lg:h[100%] rounded-lg bg-black/70 border border-amber-500 text-amber-600 text-lg sm:text-2xl md:text-4xl lg:text-2xl"
+        id="submitBTN"
+      >
+        search
+      </button>
     </div>
     <div
-      class="w-[90%] h-[40%] md:h-[55%] lg:w-[70%] lg:h-[70%] lg:mt-[5%] lg:col-start-1 lg:row-span-4   bg-black/70 m-auto mt-[5%] border-4 rounded-2xl overflow-hidden border-amber-400"
+      class="w-[90%] h-[40%] md:h-[55%] lg:w-[70%] lg:h-[70%] lg:mt-[5%] lg:col-start-1 lg:row-span-4 bg-black/70 m-auto mt-[5%] border-4 rounded-2xl overflow-hidden border-amber-400"
     >
       <div class="w-[100%] h-[60%] md:w-full flex justify-center items-center">
-        <img class=" md:h-[70%]   object-cover" id="pokimonIMG" src="" />
+        <img class="md:h-[70%] object-cover" id="pokimonIMG" src="" />
       </div>
       <div
         class="w-[100%] h-[20%] flex items-center justify-evenly text-yellow-400 text-3xl"
       >
         <h1 class="ml-[20%] md:text-2xl font-bold" id="pokemonName"></h1>
-        <h1 class="text-lg sm:text-2xl md:text-4xl lg:text-2xl font-bold" id="pokemonID"></h1>
+        <h1
+          class="text-lg sm:text-2xl md:text-4xl lg:text-2xl font-bold"
+          id="pokemonID"
+        ></h1>
       </div>
-      <div class="w-[100%] h-[20%] lg:w-[70%] lg:m-auto flex items-center justify-evenly">
+      <div
+        class="w-[100%] h-[20%] lg:w-[70%] lg:m-auto flex items-center justify-evenly"
+      >
         <button class="w-[10%] flex justify-center items-center">
-          <img class="w-[100%] invert" id="likeBTN" src="./Assests/like.png" alt="heart" />
+          <img
+            class="w-[100%] invert"
+            id="likeBTN"
+            src="./Assests/like.png"
+            alt="heart"
+          />
         </button>
         <button
           class="w-[10%] flex justify-center items-center invert"
@@ -51,80 +73,116 @@
       </div>
     </div>
     <div
-      class=" w-[90%] h-[100%] lg:w-[70%] lg:col-start-2 lg:row-span-3 lg:mt-0  bg-black/70 m-auto mt-[5%] border-4 rounded-2xl overflow-hidden border-amber-400 flex flex-col justify-evenly"
+      class="w-[90%] h-[100%] lg:w-[70%] lg:col-start-2 lg:row-span-3 lg:mt-0 bg-black/70 m-auto mt-[5%] border-4 rounded-2xl overflow-hidden border-amber-400 flex flex-col justify-evenly"
     >
       <div
-        class="text-amber-400 flex flex-col items-center w-[100%] h-[100%] mt-3 "
+        class="text-amber-400 flex flex-col items-center w-[100%] h-[100%] mt-3"
       >
-        <h1 class="text-lg sm:text-2xl md:text-4xl lg:text-2xl font-bold">Type</h1>
-        <hr class=" bg-amber-400 w-[80%] lg:w-[50%]" />
-        <h1 class="text-lg sm:text-2xl md:text-4xl lg:text-2xl" id="typeTXT"></h1>
+        <h1 class="text-lg sm:text-2xl md:text-4xl lg:text-2xl font-bold">
+          Type
+        </h1>
+        <hr class="bg-amber-400 w-[80%] lg:w-[50%]" />
+        <h1
+          class="text-lg sm:text-2xl md:text-4xl lg:text-2xl"
+          id="typeTXT"
+        ></h1>
       </div>
       <div
         class="text-amber-400 flex flex-col items-center w-[100%] h-[100%] gap-4"
       >
-        <h1 class="text-lg sm:text-2xl md:text-4xl lg:text-2xl font-bold">Abilities</h1>
+        <h1 class="text-lg sm:text-2xl md:text-4xl lg:text-2xl font-bold">
+          Abilities
+        </h1>
         <hr class="bg-amber-400 w-[80%] lg:w-[50%]" />
         <div
-          class="w-[90%] h-[100%] flex justify-center  overflow-x-auto overflow-y-hidden whitespace-nowrap"
+          class="w-[90%] h-[100%] flex justify-center overflow-x-auto overflow-y-hidden whitespace-nowrap"
         >
-          <h1 id="pokemonAblitities" class="text-lg sm:text-2xl md:text-4xl lg:text-2xl text-center"></h1>
+          <h1
+            id="pokemonAblitities"
+            class="text-lg sm:text-2xl md:text-4xl lg:text-2xl text-center"
+          ></h1>
         </div>
       </div>
       <div
         class="text-amber-400 flex flex-col items-center w-[100%] h-[100%] gap-4"
       >
-        <h1 class="text-lg sm:text-2xl md:text-4xl lg:text-2xl font-bold">Moves</h1>
+        <h1 class="text-lg sm:text-2xl md:text-4xl lg:text-2xl font-bold">
+          Moves
+        </h1>
         <hr class="bg-amber-400 w-[80%] lg:w-[50%]" />
         <div
           class="w-[90%] h-[100%] overflow-x-auto overflow-y-hidden whitespace-nowrap"
         >
-          <h1 id="movesTXT" class="text-lg sm:text-2xl md:text-4xl lg:text-2xl"></h1>
+          <h1
+            id="movesTXT"
+            class="text-lg sm:text-2xl md:text-4xl lg:text-2xl"
+          ></h1>
         </div>
       </div>
       <div
         class="text-amber-400 flex flex-col items-center w-[100%] h-[100%] gap-4"
       >
-        <h1 class="text-lg sm:text-2xl md:text-4xl lg:text-2xl font-bold">Location</h1>
+        <h1 class="text-lg sm:text-2xl md:text-4xl lg:text-2xl font-bold">
+          Location
+        </h1>
         <hr class="bg-amber-400 w-[80%] lg:w-[50%]" />
         <div
           class="w-[90%] h-[100%] overflow-x-auto overflow-y-hidden whitespace-nowrap flex justify-center"
         >
-          <h1 id="locationTXT" class="text-lg sm:text-2xl md:text-4xl lg:text-2xl"></h1>
+          <h1
+            id="locationTXT"
+            class="text-lg sm:text-2xl md:text-4xl lg:text-2xl"
+          ></h1>
         </div>
       </div>
       <div
         class="text-amber-400 flex flex-col items-center w-[100%] h-[100%] gap-4"
       >
-        <h1 class="text-lg sm:text-2xl md:text-4xl lg:text-2xl font-bold">Evolution</h1>
+        <h1 class="text-lg sm:text-2xl md:text-4xl lg:text-2xl font-bold">
+          Evolution
+        </h1>
         <hr class="bg-amber-400 w-[80%] lg:w-[50%]" />
         <div
           class="w-[90%] h-[100%] overflow-x-auto overflow-y-hidden whitespace-nowrap flex justify-center"
         >
-          <h1 id="evoTXT" class="text-lg sm:text-2xl md:text-4xl lg:text-2xl"></h1>
+          <h1
+            id="evoTXT"
+            class="text-lg sm:text-2xl md:text-4xl lg:text-2xl"
+          ></h1>
         </div>
       </div>
     </div>
-    
- 
-  <div class="  btn-container fixed bottom-0 right-0 flex justify-center items-center w-[15%] h-[10%] md:w-[12%] lg:w-[5%] lg:mr-[2%] m-auto mb-[5%] opacity-100 ">
-<button class="" id="favoritesButton"><img src="./Assests/heart.png" alt="heart"></button>
-</div>
-<!-- favorites popout -->
-<div id="favoritePopOut" class="hidden bg-white/40 backdrop-blur-md h-[50%] lg:h-[40%]  w-full fixed bottom-0 flex flex-col items-center text-4xl text-amber-400 gap-3">
-  <div class="h-[15%] w-[100%] flex justify-end">
-    <button id="favoriteCloseButton" class=" w-[10%] mr-4 mt-4 "><img class="w-[100%] lg:w-[30%]" src="./Assests/close (1).png" alt="exit"></button>
-  </div>
-  <div class="text-center text-lg sm:text-2xl md:text-4xl "><h1 class=" font-bold">Favorite</h1></div>
-  <hr class="bg-amber-500 w-[80%] ">
-  <ul class="text-lg sm:text-2xl md:text-4xl overflow-y-auto  flex flex-col justify-evenly items-center w-[70%] gap-4" id="favoritesList">
-    
-    
-    
-  </ul>
-</div>
 
-
+    <div
+      class="btn-container fixed bottom-0 right-0 flex justify-center items-center w-[15%] h-[10%] md:w-[12%] lg:w-[5%] lg:mr-[2%] m-auto mb-[5%] opacity-100"
+    >
+      <button class="" id="favoritesButton">
+        <img src="./Assests/heart.png" alt="heart" />
+      </button>
+    </div>
+    <!-- favorites popout -->
+    <div
+      id="favoritePopOut"
+      class="hidden bg-white/40 backdrop-blur-md h-[50%] lg:h-[40%] w-full fixed bottom-0 flex flex-col items-center text-4xl text-amber-400 gap-3"
+    >
+      <div class="h-[15%] w-[100%] flex justify-end">
+        <button id="favoriteCloseButton" class="w-[10%] mr-4 mt-4">
+          <img
+            class="w-[100%] lg:w-[30%]"
+            src="./Assests/close (1).png"
+            alt="exit"
+          />
+        </button>
+      </div>
+      <div class="text-center text-lg sm:text-2xl md:text-4xl">
+        <h1 class="font-bold">Favorite</h1>
+      </div>
+      <hr class="bg-amber-500 w-[80%] lg:w-[60%]" />
+      <ul
+        class="text-lg sm:text-2xl md:text-4xl overflow-y-auto flex flex-col justify-evenly items-center w-[70%] gap-4 lg:w-[70%]"
+        id="favoritesList"
+      ></ul>
+    </div>
 
     <script type="module" src="./scripts/searchBar.js"></script>
     <script type="module" src="./scripts/randomButton.js"></script>
