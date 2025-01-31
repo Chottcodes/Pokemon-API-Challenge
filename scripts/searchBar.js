@@ -127,8 +127,17 @@ const GetAPI = async (userinput) => {
 };
 
 submitBTN.addEventListener("click", async () => {
-  event.preventDefault();
   let userinput = inputfield.value;
+  event.preventDefault();
   await GetAPI(userinput);
 });
-export { GetAPI };
+
+const storetoLocalStorage = (userinput) => {
+  if(!userinput){
+    return;
+  } 
+  let inputArr = JSON.parse(localStorage.getItem('FavoritePokemon')) || [];
+  inputArr.push(inputArr);
+  localStorage.setItem('FavoritePokemon',JSON.stringify(inputArr));
+}
+export { GetAPI,inputfield };
