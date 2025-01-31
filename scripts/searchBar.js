@@ -1,3 +1,4 @@
+import { likeBTNCheck,AddtoLocalStorage } from "./favoritesButton.js";
 const inputfield = document.getElementById("default-search");
 const submitBTN = document.getElementById("submitBTN");
 const pokemonIMG = document.getElementById("pokimonIMG");
@@ -36,8 +37,13 @@ const GetAPI = async (userinput) => {
     const shinysprite = sprites.front_shiny;
     const defaultsprite = sprites.front_default;
     pokemonIMG.src = defaultsprite;
-    pokemonName.innerText = name;
+    pokemonName.innerText = name[0].toUpperCase() + name.slice(1);
     pokemonID.innerText = `#${id}`;
+    likeBTN.addEventListener('click',()=>{
+      AddtoLocalStorage(name);
+
+    })
+
     let isShinny = false;
 
     defaultBTN.addEventListener('click',()=>{
@@ -47,7 +53,6 @@ const GetAPI = async (userinput) => {
         }else{
             pokemonIMG.src=shinysprite;
             defaultBTN.src='./Assests/shines.png';
-           
         }
         isShinny = !isShinny;
     })
@@ -56,6 +61,8 @@ const GetAPI = async (userinput) => {
       pokeTypes.push(types[i].type.name);
     }
     pokemonTypeTXT.innerText = pokeTypes.join(", ");
+
+   
 
     //   abilities
     let pokeability = [];
@@ -120,15 +127,16 @@ const GetAPI = async (userinput) => {
       }
     }
     evoTXT.innerText = evoChainResult.join(", ");
-    console.log(chainData);
+    likeBTNCheck(userinput);
   } catch (error) {
     console.log(error);
   }
 };
 
-submitBTN.addEventListener("click", async () => {
+submitBTN.addEventListener("click", async (event) => {
   let userinput = inputfield.value;
   event.preventDefault();
+  defaultBTN.src="./Assests/Default.png";
   await GetAPI(userinput);
 });
 

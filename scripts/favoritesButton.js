@@ -3,7 +3,7 @@ const likeBTN = document.getElementById("likeBTN");
 const favoritesBTN = document.getElementById("favoritesButton");
 const favoritePopOut = document.getElementById("favoritePopOut");
 const favoriteCloseButton = document.getElementById("favoriteCloseButton");
-const favoritesListTxt = document.getElementById("favoritesList")
+const favoritesListTxt = document.getElementById("favoritesList");
 
 
 favoritesBTN.addEventListener("click", () => {
@@ -21,13 +21,16 @@ favoriteCloseButton.addEventListener("click", () => {
   }, 500);
 });
 
-
-
  
 
 likeBTN.addEventListener("click", () => {
   let userinput = inputfield.value;
   AddtoLocalStorage(userinput);
+    likeBTN.src =' Assests/heart.png'
+  favoritesBTN.classList.add('shake');
+  setTimeout(() => {
+    favoritesBTN.classList.remove('shake');
+  }, 1000)
   
 });
 const Showlist = () => {
@@ -36,19 +39,20 @@ const Showlist = () => {
   pokeNames.forEach(name => {
     const listFavorites = document.createElement('li');
     listFavorites.textContent = name;
-    listFavorites.classList.add("w-[100%]","flex","justify-between")
+    listFavorites.classList.add("w-[100%]","flex","justify-between","cursor-pointer","hover:bg-black/70","hover:rounded-xl","hover:border","hover:border-amber-500")
 
     listFavorites.addEventListener('click',async()=>{
-        GetAPI(name);
+        await GetAPI(name);
     })
     
     const deleteBtn = document.createElement('img');
     deleteBtn.src = "Assests/close (1).png";
-    deleteBtn.classList.add("w-[10%]","object-contain");
+    deleteBtn.classList.add("w-[10%]","object-contain","lg:w-[4%]");
 
     deleteBtn.addEventListener('click', (event) => {
         event.stopPropagation();
-        removeFavoritesName(name);  
+        removeFavoritesName(name); 
+        likeBTNCheck(name) 
         Showlist();  
       });
       listFavorites.appendChild(deleteBtn);
@@ -58,7 +62,15 @@ const Showlist = () => {
 
   })
 }
-
+const likeBTNCheck=(userinput)=>{
+    let pokeNames = GetLocalStorage();
+    if(pokeNames.includes(userinput))
+        {
+          likeBTN.src =' Assests/heart.png'
+        }else{
+          likeBTN.src = 'Assests/like.png'
+        }
+}
 
 
 
@@ -96,3 +108,4 @@ const removeFavoritesName= (pokemonnames) => {
     localstorage.splice(nameIndex,1);
     localStorage.setItem('FavoritePokemon',JSON.stringify(localstorage));
 }
+export{likeBTNCheck,AddtoLocalStorage}
