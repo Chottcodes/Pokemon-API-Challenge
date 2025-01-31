@@ -19,6 +19,7 @@ favoriteCloseButton.addEventListener("click", () => {
     favoritePopOut.classList.remove("fadeOut");
   }, 500);
 });
+
 // likeBTN.addEventListener("click", () => {
 //   let userinput = inputfield.value;
 //   AddtoLocalStorage(userinput);
@@ -60,10 +61,15 @@ const Showlist = () => {
       Showlist();
     });
     listFavorites.appendChild(deleteBtn);
-
     favoritesListTxt.appendChild(listFavorites);
   });
 };
+// const deleteFromLike=()=>{
+//   if(likeBTN.src === " Assests/heart.png")
+//   {
+
+//   }
+// }
 const likeBTNCheck = (userinput) => {
   let pokeNames = GetLocalStorage();
   if (pokeNames.includes(userinput)) {

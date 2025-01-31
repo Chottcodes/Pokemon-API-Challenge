@@ -16,6 +16,7 @@ const favoritesBTN = document.getElementById("favoritesButton");
 
 let pokeName = '';
 
+
 const GetAPI = async (userinput) => {
   try {
     const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${userinput}/`);
@@ -35,6 +36,10 @@ const GetAPI = async (userinput) => {
       species,
       abilities,
     } = data;
+
+    console.log(typeof id);
+    console.log(id >= "1");
+
     const pokemonLocationURL = location_area_encounters;
     const typeName = types[0].type.name;
     const shinysprite = sprites.front_shiny;
@@ -43,7 +48,10 @@ const GetAPI = async (userinput) => {
     pokemonName.innerText = name[0].toUpperCase() + name.slice(1);
     pokemonID.innerText = `#${id}`;
     pokeName = name;
-  
+    
+    if(id>=649){
+      searchLimit();
+     }
 
     let isShinny = false;
 
@@ -105,6 +113,7 @@ const GetAPI = async (userinput) => {
     const evodata = await evoRes.json();
     const { evolution_chain } = evodata;
     const evoChainURl = evolution_chain.url;
+    console.log(evoChainURl);
 
     const chainRes = await fetch(evoChainURl);
     const chainData = await chainRes.json();
@@ -132,18 +141,15 @@ const GetAPI = async (userinput) => {
 };
 
 submitBTN.addEventListener("click", async (event) => {
-  let userinput = inputfield.value;
   event.preventDefault();
+  let userinput = inputfield.value;
   defaultBTN.src = "./Assests/Default.png";
-  searchLimit(userinput);
   await GetAPI(userinput);
 });
-const searchLimit = (input) => {
-  
-  if(input>="650"){
-    alert('you reached your limit');
-  }
-
+const searchLimit = async () => {
+  let randomNumber = Math.floor(Math.random() * 650);
+  alert('649 is the max,randomizing');
+  await GetAPI(randomNumber);
 }
 const storetoLocalStorage = (userinput) => {
   if (!userinput) {
@@ -157,9 +163,9 @@ likeBTN.addEventListener("click", () => {
   
         AddtoLocalStorage(pokeName);
         likeBTN.src = " Assests/heart.png";
-    favoritesBTN.classList.add("shake");
+    favoritesBTN.classList.add("bounceIn");
     setTimeout(() => {
-      favoritesBTN.classList.remove("shake");
+      favoritesBTN.classList.remove("bounceIn");
     }, 1000);
       });
 export { GetAPI, inputfield };
