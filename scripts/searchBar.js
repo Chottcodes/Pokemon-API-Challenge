@@ -19,6 +19,9 @@ let pokeName = '';
 
 const GetAPI = async (userinput) => {
   try {
+
+    
+    
     const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${userinput}/`);
     if (!res.ok) {
       throw new Error("Failed to fetch Pokémon data");
@@ -26,6 +29,7 @@ const GetAPI = async (userinput) => {
 
     const data = await res.json();
     //   name and id does not need dot notation
+
     const {
       sprites,
       name,
@@ -36,7 +40,7 @@ const GetAPI = async (userinput) => {
       species,
       abilities,
     } = data;
-
+    
     console.log(typeof id);
     console.log(id >= "1");
 
